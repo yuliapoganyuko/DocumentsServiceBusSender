@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentsServiceBusSender", "DocumentsServiceBusSender\DocumentsServiceBusSender.csproj", "{804AE64E-0C20-48F4-9B55-23F64DEEA14D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentsServiceBusSender.Core", "DocumentsServiceBusSender.Core\DocumentsServiceBusSender.Core.csproj", "{54981A07-B394-42DF-AD3C-9C82EB113EBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{804AE64E-0C20-48F4-9B55-23F64DEEA14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804AE64E-0C20-48F4-9B55-23F64DEEA14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804AE64E-0C20-48F4-9B55-23F64DEEA14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804AE64E-0C20-48F4-9B55-23F64DEEA14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54981A07-B394-42DF-AD3C-9C82EB113EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54981A07-B394-42DF-AD3C-9C82EB113EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54981A07-B394-42DF-AD3C-9C82EB113EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54981A07-B394-42DF-AD3C-9C82EB113EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BB41735-851B-4077-A923-9E3C5AC379B2}
+	EndGlobalSection
+EndGlobal
