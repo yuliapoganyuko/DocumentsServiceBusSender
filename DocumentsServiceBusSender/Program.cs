@@ -3,6 +3,7 @@ using Microsoft.Azure.Functions.Worker.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using System.Threading.Tasks;
 
 namespace DocumentsServiceBusSender
@@ -14,7 +15,9 @@ namespace DocumentsServiceBusSender
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
                 .ConfigureAppConfiguration(config => 
-                    config.AddJsonFile("local.settings.json", optional: true, reloadOnChange: true))
+                    config
+                        .AddJsonFile("local.settings.json", optional: true, reloadOnChange: true)
+                        .AddEnvironmentVariables())
                 .ConfigureServices(services =>
                 {
                     services.AddSingleton<ServiceBusService>();

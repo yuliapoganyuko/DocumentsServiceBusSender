@@ -15,11 +15,10 @@ namespace DocumentsServiceBusSender.Core
         public ServiceBusService(ILoggerFactory loggerFactory, IConfiguration configuration)
         {
             this.logger = loggerFactory.CreateLogger<ServiceBusService>();
-            var connectionString = configuration.GetSection("Values")["AzureServiceBus"];
-            string topic = configuration.GetSection("Values")["AzureServiceBusTopicName"];
+            var connectionString = configuration["AzureServiceBus"];
+            string topic = configuration["AzureServiceBusTopicName"];
             client = new ServiceBusClient(connectionString);
             sender = client.CreateSender(topic);
-            logger.LogInformation("SBS is created");
         }
 
         public async Task SendMessage(string messageBody)
