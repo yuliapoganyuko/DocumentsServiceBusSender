@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace DocumentsServiceBusSender.Core
 {
-    public class ServiceBusService: IDisposable
+    public class ServiceBusService: IAsyncDisposable
     {
         private ServiceBusClient client;
 
@@ -34,24 +34,13 @@ namespace DocumentsServiceBusSender.Core
             await sender.SendMessageAsync(message);
         }
 
-        public void Dispose()
+        public async ValueTask DisposeAsync()
         {
-            logger.LogInformation("ServiceBusService disposed asyncronously");
-            DisposeAsyncCore().ConfigureAwait(false);
+            await DisposeAsyncCore().ConfigureAwait(false);
         }
 
         protected virtual async ValueTask DisposeAsyncCore()
         {
-            if (sender is IDisposable)
-            {
-                logger.LogInformation("sender is IDisposable");
-            }
-
-            if (sender is IAsyncDisposable)
-            {
-                logger.LogInformation("sender is IAsyncDisposable");
-            }
-
             if (sender is not null)
             {
                 await sender.DisposeAsync().ConfigureAwait(false);
